@@ -1,0 +1,13 @@
+
+
+### Installation
+
+Make a python virtual environment
+
+'''python3 -m venv tambda'''
+
+Start the environment
+'''source tambda/bin/activate'''
+
+Install the dependancies
+'''pip3 install -r requirements.txt'''
