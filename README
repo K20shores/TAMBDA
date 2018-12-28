@@ -1,13 +1,14 @@
-
-
-### Installation
+## Installation
 
 Make a python virtual environment
 
-'''python3 -m venv tambda'''
+'''python3 -m venv env'''
 
 Start the environment
-'''source tambda/bin/activate'''
+'''source env/bin/activate'''
 
 Install the dependancies
 '''pip3 install -r requirements.txt'''
+
+Initialize the database
+'''python3 manage.py makemigrations && python3 manage.py migrate'''

@@ -1,0 +1,29 @@
+.navbar{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.body{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.navbar{
+    background-color: #500000;
+}
+
+.navbar a.navbar-brand {
+    color: white;
+}
+
+.navbar .btn-secondary{
+    background-color: #5B6236;
+    border-color: #707373;
+}
+
+.navbar .btn-primary{
+    background-color: #003C71;
+    border-color: #707373;
+}
+
+.navbar #navbarNavDropdown ul li a{
+    color: white;
+}
