@@ -12,3 +12,6 @@ Install the dependancies
 
 Initialize the database
 '''python3 manage.py makemigrations && python3 manage.py migrate'''
+
+Collect the static files
+'''python3 manage.py collectstatic'''
