@@ -49,3 +49,11 @@ body{
 #section-performance-team #navbarNavDropdown .nav-performance-team {
     color: #FCE300;
 }
+
+#section-home a.nav-home:hover,
+#section-lessons #navbarNavDropdown a.nav-lessons:hover,
+#section-competitions #navbarNavDropdown a.nav-competitions:hover,
+#section-song-and-dance #navbarNavDropdown a.nav-song-and-dance:hover,
+#section-performance-team #navbarNavDropdown a.nav-performance-team:hover {
+    color: #5B6236;
+}
