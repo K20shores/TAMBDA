@@ -26,10 +26,26 @@ body{
     border-color: white;
 }
 
+.navbar a.btn-primary:hover{
+    border-color: #5B6236;
+}
+
+.navbar a.btn-secondary:hover{
+    border-color: #003C71;
+}
+
 .navbar #navbarNavDropdown ul li a{
     color: white;
 }
 
 .navbar #navbarNavDropdown ul:hover li:hover a:hover{
     color: #5B6236;
+}
+
+#section-home .nav-home,
+#section-lessons #navbarNavDropdown .nav-lessons,
+#section-competitions #navbarNavDropdown .nav-competitions,
+#section-song-and-dance #navbarNavDropdown .nav-song-and-dance,
+#section-performance-team #navbarNavDropdown .nav-performance-team {
+    color: #FCE300;
 }
