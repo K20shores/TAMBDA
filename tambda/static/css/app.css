@@ -1,6 +1,6 @@
 body{
     font-family: 'Nanum Gothic', sans-serif;
-    background-color: rgba(50, 0, 0, 0.2);
+    background-color: #D6D3C4;
 }
 
 .navbar{
@@ -16,22 +16,12 @@ body{
     color: #5B6236;
 }
 
-.navbar .btn-secondary{
-    background-color: #5B6236;
-    border-color: white;
+.navbar #navbarNav li a{
+    color: #707373;
 }
 
-.navbar .btn-primary{
-    background-color: #003C71;
-    border-color: white;
-}
-
-.navbar a.btn-primary:hover{
-    border-color: #5B6236;
-}
-
-.navbar a.btn-secondary:hover{
-    border-color: #003C71;
+.navbar #navbarNav li a:hover{
+    color: #5B6236;
 }
 
 .navbar .nav li a.nav-link {
@@ -63,6 +53,8 @@ body{
   position: fixed;
   border-radius: 0;
   height: 100%;
+  background-color: #332C2C;
+;
 }
 
 .navbar-fixed-left .navbar-nav > li {
