@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'accounts',
+    'song_and_dance',
     'widget_tweaks',
     'django.contrib.admin',
     'django.contrib.auth',

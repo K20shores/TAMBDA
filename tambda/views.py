@@ -11,6 +11,3 @@ def competitions(request):
 
 def performance_team(request):
     return render(request, 'tambda/performance_team.html', {})
-
-def song_and_dance(request):
-    return render(request, 'tambda/song_and_dance.html', {})
