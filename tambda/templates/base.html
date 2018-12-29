@@ -11,11 +11,13 @@
     {% block stylesheet %}{% endblock %}
 </head>
 
+{% block body %}
+
 <body id="{% block section %}section-generic{% endblock %}">
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand nav-home" href="{% url 'home' %}">TAMBDA</a>
-        <button class="navbar-toggler navbar-dark ml-auto border border-white" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-dark ml-auto border border-white" type="button" data-toggle="collapse"
+            data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -57,5 +59,6 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     {% block javascript %}{% endblock %}
 </body>
+{% endblock %}
 
 </html>
