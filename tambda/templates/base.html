@@ -11,49 +11,37 @@
   </head>
   <body id="{% block section %}section-generic{% endblock %}">
     {% block body %}
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand nav-home" href="{% url 'home' %}">TAMBDA</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link nav-lessons" href="{% url 'lessons' %}">Lessons</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-competitions" href="{% url 'competitions' %}">Competitions</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-performance-team" href="{% url 'performance_team' %}">Performance Team</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-song-and-dance" href="{% url 'song_and_dance' %}">Song &amp; Dance Library</a>
-                </li>
-                {% if user.is_authenticated %}
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{ user.username }}
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="{% url 'my_account' %}">My account</a>
-                    <a class="dropdown-item" href="{% url 'password_change' %}">Change password</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
-                    </div>
-                </li>
-                {% endif %}
-                </ul>
-                {% if not user.is_authenticated %}
-                <form class="form-inline">
-                    <a href="{% url 'login' %}" class="btn btn-secondary">Log in</a>
-                    <a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign up</a>
-                </form>
-                {% endif %}
-            </div>
-        </nav>
-        {% block content %}
-        {% endblock %}
+    <div class="navbar navbar-dark navbar-fixed-left">
+        <ul class="nav navbar-nav mb-auto">
+        <li> <a class="navbar-brand nav-home" href="{% url 'home' %}">TAMBDA</a> </li>
+        <li> <a class="nav-link nav-lessons" href="{% url 'lessons' %}">Lessons</a> </li>
+        <li> <a class="nav-link nav-competitions" href="{% url 'competitions' %}">Competitions</a> </li>
+        <li> <a class="nav-link nav-performance-team" href="{% url 'performance_team' %}">Performance Team</a> </li>
+        <li> <a class="nav-link nav-song-and-dance" href="{% url 'song_and_dance' %}">Song &amp; Dance Library</a> </li>
+        </ul>
+        <ul class="nav navbar-nav mt-auto">
+        {% if user.is_authenticated %}
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            {{ user.username }} <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <a class="dropdown-item" href="{% url 'my_account' %}">My account</a>
+                <a class="dropdown-item" href="{% url 'password_change' %}">Change password</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+            </ul>
+            </li>
+        {% else %}
+            <li> <a href="{% url 'login' %}" class="nav-link">Log in</a> </li>
+            <li> <a href="{% url 'signup' %}" class="nav-link">Sign up</a> </li>
+        {% endif %}
+        </ul>
+    </div>
+    <div class="container">
+    {% block content %}
+    {% endblock %}
+    </div>
     {% endblock body %}
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>

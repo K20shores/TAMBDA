@@ -9,7 +9,7 @@ body{
 }
 
 .navbar a.navbar-brand {
-    color: white;
+    color: #707373;
 }
 
 .navbar a.navbar-brand:hover {
@@ -34,26 +34,48 @@ body{
     border-color: #003C71;
 }
 
-.navbar #navbarNavDropdown ul li a{
-    color: white;
+.navbar .nav li a.nav-link {
+    color: #707373;
 }
 
-.navbar #navbarNavDropdown ul:hover li:hover a:hover{
+.navbar ul:hover li:hover a:hover{
     color: #5B6236;
 }
 
 #section-home .nav-home,
-#section-lessons #navbarNavDropdown .nav-lessons,
-#section-competitions #navbarNavDropdown .nav-competitions,
-#section-song-and-dance #navbarNavDropdown .nav-song-and-dance,
-#section-performance-team #navbarNavDropdown .nav-performance-team {
+#section-lessons .nav-lessons,
+#section-competitions .nav-competitions,
+#section-song-and-dance .nav-song-and-dance,
+#section-performance-team .nav-performance-team {
     color: #FCE300;
 }
 
 #section-home a.nav-home:hover,
-#section-lessons #navbarNavDropdown a.nav-lessons:hover,
-#section-competitions #navbarNavDropdown a.nav-competitions:hover,
-#section-song-and-dance #navbarNavDropdown a.nav-song-and-dance:hover,
-#section-performance-team #navbarNavDropdown a.nav-performance-team:hover {
+#section-lessons a.nav-lessons:hover,
+#section-competitions a.nav-competitions:hover,
+#section-song-and-dance a.nav-song-and-dance:hover,
+#section-performance-team a.nav-performance-team:hover {
     color: #5B6236;
+}
+
+.navbar-fixed-left {
+  width: 140px;
+  position: fixed;
+  border-radius: 0;
+  height: 100%;
+}
+
+.navbar-fixed-left .navbar-nav > li {
+  float: none;  /* Cancel default li float: left */
+  width: 139px;
+}
+
+.navbar-fixed-left + .container {
+  padding-left: 160px;
+}
+
+/* On using dropdown menu (To right shift popuped) */
+.navbar-fixed-left .navbar-nav > li > .dropdown-menu {
+  margin-top: -50px;
+  margin-left: 140px;
 }
