@@ -25,7 +25,6 @@ body{
 .sidebar { 
     grid-area: sidebar; 
     background-color: rgba(80, 0, 0, 0.8);
-    padding-left: 10%;
 }
 
 .main-content { 
@@ -49,35 +48,18 @@ body{
     color: #998542;
 }
 
+#section-lessons .nav-lessons,
+#section-competitions .nav-competitions,
+#section-song-and-dance .nav-song-and-dance,
+#section-performance-team .nav-performance-team {
+  background-color: rgba(0, 60, 113, 0.4);
+}
+
 #section-home a.nav-home:hover,
 #section-lessons a.nav-lessons:hover,
 #section-competitions a.nav-competitions:hover,
 #section-song-and-dance a.nav-song-and-dance:hover,
 #section-performance-team a.nav-performance-team:hover {
-    color: #003C71;
-}
-
-a {
-  color: #5B6236;
-}
-
-a:hover {
-    color: #003C71;
-}
-
-.header a.navbar-brand {
-  color: #5B6236;
-}
-
-.header a.navbar-brand:hover {
-  color: #003C71;
-}
-
-.header #navbarNav .navbar-nav li a {
-  color: #5B6236;
-}
-
-.header #navbarNav .navbar-nav li a:hover {
   color: #003C71;
 }
 
@@ -90,19 +72,31 @@ a:hover {
     padding-right: 10%;
 }
 
-.sidebar .sidebar-brand {
+.sidebar div.sidebar-brand {
     height: 15%;
+    padding-top: 2%;
+    text-align: center;
 }
 
-.sidebar .sidebar-mainlinks {
+.sidebar div.sidebar-mainlinks {
     height: 70%;
+    text-align: center;
 }
 
-.sidebar .sidebar-accountlinks {
+.sidebar div.sidebar-accountlinks {
     height: 15%;
+    padding-left: 10%;
 }
 
-a.tamba-brand {
+.sidebar a {
+  color: #5B6236;
+}
+
+.sidebar a:hover {
+    color: #003C71;
+}
+
+.sidebar a.tamba-brand {
     text-decoration: none;
     font-size: 20pt;
 }
