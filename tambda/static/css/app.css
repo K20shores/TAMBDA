@@ -1,35 +1,44 @@
 body{
     font-family: 'Nanum Gothic', sans-serif;
-    background-color: #D6D3C4;
+    background-image: url(../img/background2.jpg);
+    background-size: cover;
+    color: white;
 }
 
-.navbar{
-    background-color: #500000;
-    font-family: 'Nanum Gothic', sans-serif;
+.grid-container {
+  display: grid;
+  grid-template-columns: 15% 1fr 10%;
+  grid-template-rows: 10% 1fr 10%;
+  grid-template-areas: "sidebar main-content blank" 
+                       "sidebar main-content blank" 
+                       "sidebar footer blank";
+  grid-gap: 10px;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
 }
 
-.navbar a.navbar-brand {
-    color: #707373;
+.header { 
+    grid-area: header; 
 }
 
-.navbar a.navbar-brand:hover {
-    color: #5B6236;
+.sidebar { 
+    grid-area: sidebar; 
+    background-color: rgba(80, 0, 0, 0.8);
+    padding-left: 10%;
 }
 
-.navbar #navbarNav li a{
-    color: #707373;
+.main-content { 
+    grid-area: main-content; 
+    text-align: center;
 }
 
-.navbar #navbarNav li a:hover{
-    color: #5B6236;
+.blank { 
+    grid-area: blank; 
 }
 
-.navbar .nav li a.nav-link {
-    color: #707373;
-}
-
-.navbar ul:hover li:hover a:hover{
-    color: #5B6236;
+.footer {
+    grid-area: footer;
 }
 
 #section-home .nav-home,
@@ -37,7 +46,7 @@ body{
 #section-competitions .nav-competitions,
 #section-song-and-dance .nav-song-and-dance,
 #section-performance-team .nav-performance-team {
-    color: #FCE300;
+    color: #998542;
 }
 
 #section-home a.nav-home:hover,
@@ -45,23 +54,55 @@ body{
 #section-competitions a.nav-competitions:hover,
 #section-song-and-dance a.nav-song-and-dance:hover,
 #section-performance-team a.nav-performance-team:hover {
-    color: #5B6236;
+    color: #003C71;
 }
 
-.navbar-fixed-left {
-  width: 20%;
-  position: fixed;
-  border-radius: 0;
-  height: 100%;
-  background-color: #332C2C;
-;
+a {
+  color: #5B6236;
 }
 
-.navbar-fixed-left .navbar-nav > li {
-  float: none;  /* Cancel default li float: left */
-  width: 100%;
+a:hover {
+    color: #003C71;
 }
 
-.navbar-fixed-left + .container {
-  padding-left: 20%;
+.header a.navbar-brand {
+  color: #5B6236;
+}
+
+.header a.navbar-brand:hover {
+  color: #003C71;
+}
+
+.header #navbarNav .navbar-nav li a {
+  color: #5B6236;
+}
+
+.header #navbarNav .navbar-nav li a:hover {
+  color: #003C71;
+}
+
+.main-content h1 {
+    padding-bottom: 10%;
+}
+
+.main-content p {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.sidebar .sidebar-brand {
+    height: 15%;
+}
+
+.sidebar .sidebar-mainlinks {
+    height: 70%;
+}
+
+.sidebar .sidebar-accountlinks {
+    height: 15%;
+}
+
+a.tamba-brand {
+    text-decoration: none;
+    font-size: 20pt;
 }
