@@ -1,8 +1,24 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block section %}section-song-and-dance{% endblock %}
 
-{% block content %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/song_and_dance.css' %}">
+{% endblock %}
 
-<h1>Song &amp; Dance</h1>
+{% block content %}
+<div class="song-and-dance-title">
+    <h1> Song &amp; Dance</h1>
+</div>
+<div class="song-and-dance-grid-container">
+    <div class="standard"> </div>
+    <div class="standard-dances"> </div>
+
+    <div class="latin"> </div>
+    <div class="latin-dances"> </div>
+
+    <div class="social"> </div>
+    <div class="social-dances"> </div>
+</div>
 
 {% endblock %}

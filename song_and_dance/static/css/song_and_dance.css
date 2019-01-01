@@ -1,0 +1,53 @@
+.main-content {
+  display: grid;
+  grid-template-rows: 20% 1fr;
+  grid-template-areas:
+    "song-and-dance-title"
+    "song-and-dance-grid-container";
+}
+
+.song-and-dance-title {
+    grid-area: "song-and-dance-title";
+}
+
+.song-and-dance-grid-container {
+  grid-area: song-and-dance-grid-container;
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "standard standard-dances"
+    "latin latin-dances"
+    "social social-dances";
+  grid-gap: 2px;
+}
+
+.standard {
+  grid-area: standard;
+  background-color: blue;
+}
+
+.standard-dances {
+  grid-area: standard-dances;
+  background-color: blue;
+}
+
+.latin {
+  grid-area: latin;
+  background-color: red;
+}
+
+.latin-dances {
+  grid-area: latin-dances;
+  background-color: red;
+}
+
+.social {
+  grid-area: social;
+  background-color: green;
+}
+
+.social-dances {
+  grid-area: social-dances;
+  background-color: green;
+}

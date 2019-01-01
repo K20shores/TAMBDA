@@ -1,5 +1,5 @@
-body{
-  font-family: 'Nanum Gothic', sans-serif;
+body {
+  font-family: "Nanum Gothic", sans-serif;
   background-image: url(../img/background2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -9,34 +9,40 @@ body{
 /* Grid Setup */
 .grid-container {
   display: grid;
-  grid-template-columns: 20% 1fr 10%;
   grid-template-rows: 10% 1fr 10%;
-  grid-template-areas: "sidebar main-content blank" 
-             "sidebar main-content blank" 
-             "sidebar footer blank";
+  grid-template-areas:
+    "mobile-header"
+    "main-content"
+    "footer";
   grid-gap: 10px;
   width: 100vw;
   height: 100vh;
-  padding: 10px;
 }
 
-.header { 
-  grid-area: header; 
+.header {
+  grid-area: header;
 }
 
-.sidebar { 
-  grid-area: sidebar; 
+.sidebar {
+  grid-area: sidebar;
   background-color: rgba(80, 0, 0, 0.8);
   text-transform: capitalize;
 }
 
-.main-content { 
-  grid-area: main-content; 
+@media only screen and (max-width: 991px) {
+  .sidebar{
+    width: 0;
+    height: 0;
+  }
+}
+
+.main-content {
+  grid-area: main-content;
   text-align: center;
 }
 
-.blank { 
-  grid-area: blank; 
+.blank {
+  grid-area: blank;
 }
 
 .footer {
@@ -52,81 +58,94 @@ body{
   padding: 0 15% 0 15%;
 }
 
-/* Sidebar content styling */
-.sidebar a {
-  text-decoration: none;
-  color: #5B6236;
-  text-align: center;
-  padding: 5px 0px;
-}
-
-.sidebar a:hover {
-  color: #FCE300;
-}
-
-.sidebar div.sidebar-brand {
-  height: 15%;
-  text-align: center;
-}
-
-.sidebar a.tamba-brand {
-  font-size: 25pt;
-}
-
-.sidebar div.sidebar-main-links {
-  height: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around
-}
-
-.sidebar div.sidebar-main-links a {
-  font-size: 15pt;
-}
-
-.sidebar div.sidebar-account-links {
-  height: 15%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around
-}
-
-#section-home .sidebar a.nav-home,
-#section-lessons .sidebar a.nav-lessons,
-#section-competitions .sidebar a.nav-competitions,
-#section-song-and-dance .sidebar a.nav-song-and-dance,
-#section-performance-team .sidebar a.nav-performance-team {
-  color: #5B6236;
-}
-
-#section-home .sidebar a.nav-home:hover,
-#section-lessons .sidebar a.nav-lessons:hover,
-#section-competitions .sidebar a.nav-competitions:hover,
-#section-song-and-dance .sidebar a.nav-song-and-dance:hover,
-#section-performance-team .sidebar a.nav-performance-team:hover {
-  color: #003C71;
-}
-
-/* add a block of color around the navigational links, but not the website branch */
-#section-lessons a.nav-lessons,
-#section-competitions a.nav-competitions,
-#section-song-and-dance a.nav-song-and-dance,
-#section-performance-team a.nav-performance-team {
-  background-color: rgba(0, 60, 113, 0.2);
-}
-
 /* Footer styling */
 .footer a {
-  padding: 10px;
-  color: #5B6236;
+  background-color: rgba(80, 0, 0, 0.8);
+  margin: 2px;
+  padding: 2px;
+  color: #5b6236;
   text-decoration: none;
 }
 
 .footer a:hover {
-  color: #003C71;
+  color: #003c71;
 }
 
-.footer div.footer-links{
+.footer div.footer-links {
   text-align: center;
   font-weight: bold;
+}
+
+/* desktop view */
+@media only screen and (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: 20% 1fr 10%;
+    grid-template-areas:
+      "sidebar main-content blank"
+      "sidebar main-content blank"
+      "sidebar footer blank";
+  }
+
+  /* Sidebar content styling */
+  .sidebar a {
+    text-decoration: none;
+    color: #5b6236;
+    text-align: center;
+    padding: 5px 0px;
+  }
+
+  .sidebar a:hover {
+    color: #fce300;
+  }
+
+  .sidebar div.sidebar-brand {
+    height: 15%;
+    text-align: center;
+  }
+
+  .sidebar a.tamba-brand {
+    font-size: 25pt;
+  }
+
+  .sidebar div.sidebar-main-links {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .sidebar div.sidebar-main-links a {
+    font-size: 15pt;
+  }
+
+  .sidebar div.sidebar-account-links {
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  #section-home .sidebar a.nav-home,
+  #section-lessons .sidebar a.nav-lessons,
+  #section-competitions .sidebar a.nav-competitions,
+  #section-song-and-dance .sidebar a.nav-song-and-dance,
+  #section-performance-team .sidebar a.nav-performance-team {
+    color: #5b6236;
+  }
+
+  #section-home .sidebar a.nav-home:hover,
+  #section-lessons .sidebar a.nav-lessons:hover,
+  #section-competitions .sidebar a.nav-competitions:hover,
+  #section-song-and-dance .sidebar a.nav-song-and-dance:hover,
+  #section-performance-team .sidebar a.nav-performance-team:hover {
+    color: #003c71;
+  }
+
+  /* add a block of color around the navigational links, but not the website branch */
+  #section-lessons a.nav-lessons,
+  #section-competitions a.nav-competitions,
+  #section-song-and-dance a.nav-song-and-dance,
+  #section-performance-team a.nav-performance-team {
+    background-color: rgba(0, 60, 113, 0.2);
+  }
 }
