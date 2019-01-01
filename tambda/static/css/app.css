@@ -1,17 +1,19 @@
 body{
-    font-family: 'Nanum Gothic', sans-serif;
-    background-image: url(../img/background2.jpg);
-    background-size: cover;
-    color: white;
+  font-family: 'Nanum Gothic', sans-serif;
+  background-image: url(../img/background2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
 }
 
+/* Grid Setup */
 .grid-container {
   display: grid;
-  grid-template-columns: 15% 1fr 10%;
+  grid-template-columns: 20% 1fr 10%;
   grid-template-rows: 10% 1fr 10%;
   grid-template-areas: "sidebar main-content blank" 
-                       "sidebar main-content blank" 
-                       "sidebar footer blank";
+             "sidebar main-content blank" 
+             "sidebar footer blank";
   grid-gap: 10px;
   width: 100vw;
   height: 100vh;
@@ -19,84 +21,112 @@ body{
 }
 
 .header { 
-    grid-area: header; 
+  grid-area: header; 
 }
 
 .sidebar { 
-    grid-area: sidebar; 
-    background-color: rgba(80, 0, 0, 0.8);
+  grid-area: sidebar; 
+  background-color: rgba(80, 0, 0, 0.8);
+  text-transform: capitalize;
 }
 
 .main-content { 
-    grid-area: main-content; 
-    text-align: center;
+  grid-area: main-content; 
+  text-align: center;
 }
 
 .blank { 
-    grid-area: blank; 
+  grid-area: blank; 
 }
 
 .footer {
-    grid-area: footer;
+  grid-area: footer;
 }
 
-#section-home .nav-home,
-#section-lessons .nav-lessons,
-#section-competitions .nav-competitions,
-#section-song-and-dance .nav-song-and-dance,
-#section-performance-team .nav-performance-team {
-    color: #998542;
-}
-
-#section-lessons .nav-lessons,
-#section-competitions .nav-competitions,
-#section-song-and-dance .nav-song-and-dance,
-#section-performance-team .nav-performance-team {
-  background-color: rgba(0, 60, 113, 0.4);
-}
-
-#section-home a.nav-home:hover,
-#section-lessons a.nav-lessons:hover,
-#section-competitions a.nav-competitions:hover,
-#section-song-and-dance a.nav-song-and-dance:hover,
-#section-performance-team a.nav-performance-team:hover {
-  color: #003C71;
-}
-
+/* Main content styling */
 .main-content h1 {
-    padding-bottom: 10%;
+  padding-bottom: 10%;
 }
 
 .main-content p {
-    padding-left: 10%;
-    padding-right: 10%;
+  padding: 0 15% 0 15%;
 }
 
-.sidebar div.sidebar-brand {
-    height: 15%;
-    padding-top: 2%;
-    text-align: center;
-}
-
-.sidebar div.sidebar-mainlinks {
-    height: 70%;
-    text-align: center;
-}
-
-.sidebar div.sidebar-accountlinks {
-    height: 15%;
-    padding-left: 10%;
-}
-
+/* Sidebar content styling */
 .sidebar a {
+  text-decoration: none;
   color: #5B6236;
+  text-align: center;
+  padding: 5px 0px;
 }
 
 .sidebar a:hover {
-    color: #003C71;
+  color: #FCE300;
+}
+
+.sidebar div.sidebar-brand {
+  height: 15%;
+  text-align: center;
 }
 
 .sidebar a.tamba-brand {
-    text-decoration: none;
-    font-size: 20pt;
+  font-size: 25pt;
+}
+
+.sidebar div.sidebar-main-links {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around
+}
+
+.sidebar div.sidebar-main-links a {
+  font-size: 15pt;
+}
+
+.sidebar div.sidebar-account-links {
+  height: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around
+}
+
+#section-home .sidebar a.nav-home,
+#section-lessons .sidebar a.nav-lessons,
+#section-competitions .sidebar a.nav-competitions,
+#section-song-and-dance .sidebar a.nav-song-and-dance,
+#section-performance-team .sidebar a.nav-performance-team {
+  color: #5B6236;
+}
+
+#section-home .sidebar a.nav-home:hover,
+#section-lessons .sidebar a.nav-lessons:hover,
+#section-competitions .sidebar a.nav-competitions:hover,
+#section-song-and-dance .sidebar a.nav-song-and-dance:hover,
+#section-performance-team .sidebar a.nav-performance-team:hover {
+  color: #003C71;
+}
+
+/* add a block of color around the navigational links, but not the website branch */
+#section-lessons a.nav-lessons,
+#section-competitions a.nav-competitions,
+#section-song-and-dance a.nav-song-and-dance,
+#section-performance-team a.nav-performance-team {
+  background-color: rgba(0, 60, 113, 0.2);
+}
+
+/* Footer styling */
+.footer a {
+  padding: 10px;
+  color: #5B6236;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #003C71;
+}
+
+.footer div.footer-links{
+  text-align: center;
+  font-weight: bold;
 }
