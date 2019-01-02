@@ -1,6 +1,6 @@
 body {
   font-family: "Nanum Gothic", sans-serif;
-  background-image: url(../img/background2.jpg);
+  background-image: url(../img/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
@@ -19,21 +19,135 @@ body {
   height: 100vh;
 }
 
-.header {
-  grid-area: header;
+.mobile-header {
+  background-color: rgba(80, 0, 0, 0.8);
+  grid-area: mobile-header;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* hamburger courtesy of https://codepen.io/fourjuaneight/pen/xppPWw, thanks Juan! */
+/* Hamburger Styling */
+.mobile-header .hamburger {
+  position: absolute;
+  width: 50px;
+  height: 45px;
+  top: 10px;
+  right: 20px;
+  z-index: 5;
+}
+
+.mobile-header .hamburger div {
+  position: relative;
+  width: 50px;
+  height: 5px;
+
+  background-color: rgb(91, 98, 54);
+  margin-top: 7px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.mobile-header #toggle {
+  display: none;
+}
+
+/* Hamburger Animation */
+.mobile-header #toggle:checked + .hamburger .top {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  margin-top: 22.5px;
+}
+
+.mobile-header #toggle:checked + .hamburger .meat {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin-top: -5px;
+}
+
+.mobile-header #toggle:checked + .hamburger .bottom {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.mobile-header #toggle:checked + .hamburger + .nav {
+  top: 0;
+}
+
+/* Menu Styling */
+.mobile-header .nav {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(80, 0, 0, 0.75);
+  top: -100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.mobile-header .nav .nav-wrapper {
+  position: relative;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.mobile-header nav {
+  font: 700 20px 'Oswald', sans-serif;
+  height: 100vh;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mobile-header nav a {
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 15px;
+  color: white;
+  opacity: 0;
+  text-decoration: none;
+  font-size: 2.3em;
+  letter-spacing: 3px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.mobile-header nav a:hover {
+  background-color: #fff;
+  color: rgb(61, 61, 61);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.mobile-header nav a:first-child {
+  margin-top: 0;
+}
+
+/* Dropdown Animation */
+.mobile-header #toggle:checked + .hamburger + .nav .nav-wrapper nav a {
+  opacity: 0.9;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .sidebar {
-  grid-area: sidebar;
-  background-color: rgba(80, 0, 0, 0.8);
-  text-transform: capitalize;
-}
-
-@media only screen and (max-width: 991px) {
-  .sidebar{
-    width: 0;
-    height: 0;
-  }
+  display: none;
 }
 
 .main-content {
@@ -42,11 +156,19 @@ body {
 }
 
 .blank {
-  grid-area: blank;
+  display: none;
 }
 
 .footer {
   grid-area: footer;
+}
+
+/* Mobile header styling */
+
+.mobile-header a {
+  text-decoration: none;
+  color: #5b6236;
+  text-align: center;
 }
 
 /* Main content styling */
@@ -78,6 +200,10 @@ body {
 
 /* desktop view */
 @media only screen and (min-width: 992px) {
+  .mobile-header {
+    display: none;
+  }
+
   .grid-container {
     grid-template-columns: 20% 1fr 10%;
     grid-template-areas:
@@ -86,7 +212,19 @@ body {
       "sidebar footer blank";
   }
 
+  .blank {
+    display: block;
+    grid-area: blank;
+  }
+
   /* Sidebar content styling */
+  .sidebar {
+    display: block;
+    grid-area: sidebar;
+    background-color: rgba(80, 0, 0, 0.8);
+    text-transform: capitalize;
+  }
+
   .sidebar a {
     text-decoration: none;
     color: #5b6236;
