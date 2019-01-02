@@ -45,6 +45,15 @@
             <a class="nav-song-and-dance" href="{% url 'song_and_dance' %}"
               >Song &amp; Dance Library</a
             >
+            {% if user.is_authenticated %}
+            <a href="#" class="" data-toggle="">
+              {{ user.username }} <span class="caret"></span>
+            </a>
+            <a class="" href="{% url 'my_account' %}">My account</a>
+            <a class="" href="{% url 'password_change' %}">Change password</a>
+            <a class="" href="{% url 'logout' %}">Log out</a> {% else %}
+            <a href="{% url 'login' %}">Log in</a>
+            <a href="{% url 'signup' %}">Sign up</a> {% endif %}
           </nav>
         </div>
       </div>
@@ -67,20 +76,13 @@
       </div>
       <div class="sidebar-account-links">
         {% if user.is_authenticated %}
-        <ul class="">
-          <li class="">
-            <a href="#" class="" data-toggle="">
-              {{ user.username }} <span class="caret"></span>
-            </a>
-            <ul class="" role="menu">
-              <a class="" href="{% url 'my_account' %}">My account</a>
-              <a class="" href="{% url 'password_change' %}">Change password</a>
-              <div class=""></div>
-              <a class="" href="{% url 'logout' %}">Log out</a>
-            </ul>
-          </li>
-        </ul>
-        {% else %} <a href="{% url 'login' %}">Log in</a>
+        <a href="#" class="" data-toggle="">
+          {{ user.username }} <span class="caret"></span>
+        </a>
+        <a class="" href="{% url 'my_account' %}">My account</a>
+        <a class="" href="{% url 'password_change' %}">Change password</a>
+        <a class="" href="{% url 'logout' %}">Log out</a> {% else %}
+        <a href="{% url 'login' %}">Log in</a>
         <a href="{% url 'signup' %}">Sign up</a> {% endif %}
       </div>
     </div>
