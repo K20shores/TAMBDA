@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import sys
 from decouple import config, Csv
 import dj_database_url
 
@@ -83,6 +84,8 @@ DATABASES = {
         default=config('DATABASE_URL')
     )
 }
+
+print(DATABASES, file=sys.stderr)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
