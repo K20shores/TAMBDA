@@ -4,50 +4,112 @@
   grid-template-areas:
     "song-and-dance-title"
     "song-and-dance-grid-container";
+  color: white;
+}
+
+.main-content h1 {
+  padding: 10px;
+}
+
+.main-content a {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  padding: 5px 0px;
 }
 
 .song-and-dance-title {
-    grid-area: "song-and-dance-title";
+  grid-area: "song-and-dance-title";
 }
 
 .song-and-dance-grid-container {
   grid-area: song-and-dance-grid-container;
   display: grid;
-  grid-template-columns: 20% 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 20% 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
-    "standard standard-dances"
-    "latin latin-dances"
-    "social social-dances";
+    "standard latin social"
+    "standard-dances latin-dances social-dances";
   grid-gap: 2px;
+  border-radius: 5px;
+}
+
+.standard,
+.latin,
+.social,
+.standard-dances,
+.latin-dances,
+.social-dances {
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
 }
 
 .standard {
   grid-area: standard;
-  background-color: blue;
 }
 
 .standard-dances {
   grid-area: standard-dances;
-  background-color: blue;
 }
 
 .latin {
   grid-area: latin;
-  background-color: red;
 }
 
 .latin-dances {
   grid-area: latin-dances;
-  background-color: red;
 }
 
 .social {
   grid-area: social;
-  background-color: green;
 }
 
 .social-dances {
   grid-area: social-dances;
-  background-color: green;
+}
+
+.select-checkbox option::before {
+  width: 1.3em;
+  text-align: center;
+  display: inline-block;
+}
+
+input[type="checkbox"] {
+  opacity: 0;
+}
+
+.song-and-dance-grid-container label {
+  padding: 5px 10px 5px 10px;
+  width: 100%;
+  height: 18%;
+  background-color: rgba(0, 60, 113, 0.8);
+  border: 1px solid;
+  border-color: rgba(0, 60, 113, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.song-and-dance-grid-container label:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  background-color: rgba(228, 0, 43, 0.4);
+}
+
+.song-and-dance-grid-container input[type="checkbox"]:checked + label {
+  background-color: rgba(228, 0, 43, 0.4);
+}
+
+#dance-select {
+  display: none;
+}
+
+#btn-generate-playlist {
+  padding: 20px 10px;
+  background-color: rgba(112, 115, 115, 1.0);
+  border: none;
 }

@@ -6,4 +6,5 @@ from . import views
 
 urlpatterns = [
     path('', views.song_and_dance, name='song_and_dance'),
+    path('generate/', views.generate, name='generate'),
 ]

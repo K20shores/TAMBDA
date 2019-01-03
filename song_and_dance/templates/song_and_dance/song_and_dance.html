@@ -1,24 +1,78 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block section %}section-song-and-dance{% endblock %}
+{% extends 'base.html' %} 
+
+{% load static %} 
+
+{% block section %}section-song-and-dance{% endblock %} 
 
 {% block stylesheet %}
-<link rel="stylesheet" href="{% static 'css/song_and_dance.css' %}">
-{% endblock %}
+<link rel="stylesheet" href="{% static 'css/song_and_dance.css' %}" /> 
+{% endblock %} 
 
 {% block content %}
+<form action="{% url 'generate' %}" type="GET" id="dance-select">
+</form>
 <div class="song-and-dance-title">
-    <h1> Song &amp; Dance</h1>
+    <h1>Song &amp; Dance</h1> 
+    <button type="submit" form="dance-select" value="Submit" id="btn-generate-playlist">Generate playlist</button>
 </div>
 <div class="song-and-dance-grid-container">
-    <div class="standard"> </div>
-    <div class="standard-dances"> </div>
+  <div class="standard"><h1>Standard</h1></div>
+  <div class="standard-dances">
+    <input type="checkbox" name="foxtrot" id="foxtrot" form="dance-select">
+    <label for="foxtrot">Foxtrot</label> 
 
-    <div class="latin"> </div>
-    <div class="latin-dances"> </div>
+    <input type="checkbox" name="quickstep" id="quickstep" form="dance-select">
+    <label for="quickstep">Quickstep</label> 
 
-    <div class="social"> </div>
-    <div class="social-dances"> </div>
+    <input type="checkbox" name="tango" id="tango" form="dance-select">
+    <label for="tango">Tango</label> 
+
+    <input type="checkbox" name="vwaltz" id="vwaltz" form="dance-select">
+    <label for="vwaltz">Viennese Waltz</label> 
+
+    <input type="checkbox" name="waltz" id="waltz" form="dance-select">
+    <label for="waltz">Waltz</label> 
+  </div>
+
+  <div class="latin"><h1>Latin</h1></div>
+  <div class="latin-dances">
+    <input type="checkbox" name="chacha" id="chacha" form="dance-select">
+    <label for="chacha">Cha Cha</label> 
+
+    <input type="checkbox" name="east-coast" id="east-coast" form="dance-select">
+    <label for="east-coast">East Coast Swing</label> 
+
+    <input type="checkbox" name="jive" id="jive" form="dance-select">
+    <label for="jive">Jive</label> 
+
+    <input type="checkbox" name="paso" id="paso" form="dance-select">
+    <label for="paso">Paso Doble</label> 
+
+    <input type="checkbox" name="rumba" id="rumba" form="dance-select">
+    <label for="rumba">Rumba</label> 
+  </div>
+
+  <div class="social"><h1>Social</h1></div>
+  <div class="social-dances">
+    <input type="checkbox" name="bachata" id="bachata" form="dance-select">
+    <label for="bachata">Bachata</label> 
+
+    <input type="checkbox" name="bolero" id="bolero" form="dance-select">
+    <label for="bolero">Bolero</label> 
+
+    <input type="checkbox" name="mambo" id="mambo" form="dance-select">
+    <label for="mambo">Mambo</label> 
+
+    <input type="checkbox" name="salsa" id="salsa" form="dance-select">
+    <label for="salsa">Salsa</label> 
+
+    <input type="checkbox" name="west-coast" id="west-coast" form="dance-select">
+    <label for="west-coast">West Coast Swing</label> 
+  </div>
 </div>
 
+{% endblock %}
+
+{% block javascript %}
+<script src="{% static 'js/song_and_dance.js' %}"></script>
 {% endblock %}

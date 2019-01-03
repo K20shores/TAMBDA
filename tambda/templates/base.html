@@ -22,7 +22,7 @@
   >
     <div class="mobile-header">
       <div class="mobile-header-brand">
-        <a class="tamba-brand nav-home" href="{% url 'home' %}">TAMBDA</a>
+        <a class="tambda-brand nav-home" href="{% url 'home' %}">TAMBDA</a>
       </div>
       <input id="toggle" type="checkbox" />
       <label class="hamburger" for="toggle">
@@ -30,11 +30,10 @@
         <div class="meat"></div>
         <div class="bottom"></div>
       </label>
-
       <div class="nav">
         <div class="nav-wrapper">
           <nav>
-            <a class="tamba-brand nav-home" href="{% url 'home' %}">Home</a>
+            <a class="nav-home" href="{% url 'home' %}">Home</a>
             <a class="nav-lessons" href="{% url 'lessons' %}">Lessons</a>
             <a class="nav-competitions" href="{% url 'competitions' %}"
               >Competitions</a
@@ -51,16 +50,18 @@
             </a>
             <a class="" href="{% url 'my_account' %}">My account</a>
             <a class="" href="{% url 'password_change' %}">Change password</a>
-            <a class="" href="{% url 'logout' %}">Log out</a> {% else %}
+            <a class="" href="{% url 'logout' %}">Log out</a> 
+            {% else %}
             <a href="{% url 'login' %}">Log in</a>
-            <a href="{% url 'signup' %}">Sign up</a> {% endif %}
+            <a href="{% url 'signup' %}">Sign up</a>
+            {% endif %}
           </nav>
         </div>
       </div>
     </div>
     <div class="sidebar">
       <div class="sidebar-brand">
-        <a class="tamba-brand nav-home" href="{% url 'home' %}">TAMBDA</a>
+        <a class="tambda-brand nav-home" href="{% url 'home' %}">TAMBDA</a>
       </div>
       <div class="sidebar-main-links">
         <a class="nav-lessons" href="{% url 'lessons' %}">Lessons</a>
@@ -81,9 +82,11 @@
         </a>
         <a class="" href="{% url 'my_account' %}">My account</a>
         <a class="" href="{% url 'password_change' %}">Change password</a>
-        <a class="" href="{% url 'logout' %}">Log out</a> {% else %}
+        <a class="" href="{% url 'logout' %}">Log out</a> 
+        {% else %}
         <a href="{% url 'login' %}">Log in</a>
-        <a href="{% url 'signup' %}">Sign up</a> {% endif %}
+        <a href="{% url 'signup' %}">Sign up</a> 
+        {% endif %}
       </div>
     </div>
     <div class="main-content">{% block content %} {% endblock %}</div>

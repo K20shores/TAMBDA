@@ -80,8 +80,12 @@ WSGI_APPLICATION = 'tambda.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'k20shores$tambda',
+        'USER': 'k20shores',
+        'PASSWORD': 'jlfBw5uybuS5O!5mw3yn',
+        'HOST': 'k20shores.mysql.pythonanywhere-services.com',
+        'PORT': '3306',
     }
 }
 

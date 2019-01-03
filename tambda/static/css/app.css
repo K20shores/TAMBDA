@@ -1,21 +1,9 @@
 body {
   font-family: "Nanum Gothic", sans-serif;
   color: white;
-}
-
-body:before {
   background-image: url(../img/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  display: block;
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  opacity: 0.9;
 }
 
 /* Grid Setup */
@@ -36,8 +24,13 @@ body:before {
   background-color: rgba(80, 0, 0, 0.8);
   grid-area: mobile-header;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+}
+
+.mobile-header .tambda-brand {
+  padding: 50px;
+  font-size: 3em;
 }
 
 .mobile-header a {
@@ -49,11 +42,9 @@ body:before {
 /* hamburger courtesy of https://codepen.io/fourjuaneight/pen/xppPWw, thanks Juan! */
 /* Hamburger Styling */
 .mobile-header .hamburger {
-  position: absolute;
   width: 50px;
   height: 45px;
-  top: 10px;
-  right: 20px;
+  padding: 50px;
   z-index: 5;
 }
 
@@ -293,10 +284,12 @@ body:before {
   .sidebar div.sidebar-brand {
     height: 15%;
     text-align: center;
+    display: flex;
+    align-items: center;
   }
 
-  .sidebar a.tamba-brand {
-    font-size: 25pt;
+  .sidebar a.tambda-brand {
+    font-size: 3em;
   }
 
   .sidebar div.sidebar-main-links {
