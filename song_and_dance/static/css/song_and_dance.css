@@ -4,7 +4,6 @@
   grid-template-areas:
     "song-and-dance-title"
     "song-and-dance-grid-container";
-  color: white;
 }
 
 .main-content h1 {
@@ -88,13 +87,13 @@ input[type="checkbox"] {
 }
 
 .song-and-dance-grid-container label:hover {
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
-  background-color: rgba(228, 0, 43, 0.4);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgba(228, 0, 43, 0.8);
 }
 
 .song-and-dance-grid-container input[type="checkbox"]:checked + label {
-  background-color: rgba(228, 0, 43, 0.4);
+  background-color: rgba(228, 0, 43, 0.8);
 }
 
 #dance-select {
@@ -103,6 +102,6 @@ input[type="checkbox"] {
 
 #btn-generate-playlist {
   padding: 20px 10px;
-    background-color: rgba(112, 115, 115, 1.0);
+  background-color: rgba(112, 115, 115, 1);
   border: none;
 }
