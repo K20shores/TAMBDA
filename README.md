@@ -15,3 +15,6 @@ Initialize the database
 
 Collect the static files
 `python3 manage.py collectstatic`
+
+Run the server
+`python3 manage.py runserver`
