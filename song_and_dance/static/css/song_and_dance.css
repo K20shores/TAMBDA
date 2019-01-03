@@ -11,13 +11,6 @@
   padding: 10px;
 }
 
-.main-content a {
-  text-decoration: none;
-  color: white;
-  text-align: center;
-  padding: 5px 0px;
-}
-
 .song-and-dance-title {
   grid-area: "song-and-dance-title";
 }
@@ -110,6 +103,6 @@ input[type="checkbox"] {
 
 #btn-generate-playlist {
   padding: 20px 10px;
-  background-color: rgba(112, 115, 115, 1.0);
+    background-color: rgba(112, 115, 115, 1.0);
   border: none;
 }

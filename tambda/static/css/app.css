@@ -265,12 +265,11 @@ body {
     display: block;
     grid-area: sidebar;
     background-color: rgba(80, 0, 0, 0.8);
-    text-transform: capitalize;
   }
 
   .sidebar a {
     text-decoration: none;
-    color: #5b6236;
+    color: white;
     text-align: center;
     padding: 5px 0px;
   }

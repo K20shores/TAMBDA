@@ -84,8 +84,12 @@ DATABASES = {
         'NAME': 'k20shores$tambda',
         'USER': 'k20shores',
         'PASSWORD': 'jlfBw5uybuS5O!5mw3yn',
-        'HOST': 'k20shores.mysql.pythonanywhere-services.com',
+        'HOST': 'localhost',
         'PORT': '3306',
+    },
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
