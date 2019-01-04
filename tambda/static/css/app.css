@@ -1,3 +1,5 @@
+/* hamburger courtesy of https://codepen.io/fourjuaneight/pen/xppPWw, thanks Juan! */
+
 body {
   font-family: "Nanum Gothic", sans-serif;
   color: black;
@@ -6,19 +8,45 @@ body {
   background-size: cover;
 }
 
-/* Grid Setup */
 .grid-container {
   display: grid;
   grid-template-rows: 10% 1fr;
-  grid-template-areas:
-    "mobile-header"
-    "main-content";
+  grid-template-areas: "mobile-header" "main-content";
   width: 100vw;
   height: 100vh;
   position: absolute;
 }
 
-/* Mobile header styling */
+/* hide the sidebar on mobile */
+.sidebar {
+  display: none;
+}
+
+/* Main content */
+.main-content {
+  grid-area: main-content;
+  text-align: center;
+  max-height: 100%;
+  overflow-y: auto;
+  margin-left: 10px;
+  background-color: rgba(255, 255, 255, 0.65);
+  border-radius: 10px;
+  color: black;
+}
+
+.main-content div.officer img {
+  width: 200px;
+}
+
+.main-content h1 {
+  padding-bottom: 10%;
+}
+
+.main-content p {
+  padding: 0 15% 0 15%;
+}
+
+/* Mobile header */
 .mobile-header {
   background-color: rgba(80, 0, 0, 0.8);
   grid-area: mobile-header;
@@ -27,19 +55,7 @@ body {
   align-items: center;
 }
 
-.mobile-header .tambda-brand {
-  padding: 50px;
-  font-size: 3em;
-}
-
-.mobile-header a {
-  text-decoration: none;
-  color: #5b6236;
-  text-align: center;
-}
-
-/* hamburger courtesy of https://codepen.io/fourjuaneight/pen/xppPWw, thanks Juan! */
-/* Hamburger Styling */
+/* Hamburger styling */
 .mobile-header .hamburger {
   width: 50px;
   height: 45px;
@@ -51,8 +67,7 @@ body {
   position: relative;
   width: 50px;
   height: 5px;
-
-  background-color: rgb(91, 98, 54);
+  background-color: white;
   margin-top: 7px;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
@@ -128,7 +143,7 @@ body {
   width: 100%;
   padding: 10px 0;
   margin-top: 15px;
-  color: #5b6236;
+  color: white;
   opacity: 0;
   text-decoration: none;
   font-size: 2.3em;
@@ -154,66 +169,47 @@ body {
   transform: scale(1);
 }
 
-#section-home .mobile-header a.nav-home,
+/* anchor animation */
+.mobile-header a {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+/* make the home brand largish */
+.mobile-header .tambda-brand {
+  margin-left: 10px;
+  font-size: 3em;
+}
+
 #section-lessons .mobile-header a.nav-lessons,
 #section-competitions .mobile-header a.nav-competitions,
 #section-song-and-dance .mobile-header a.nav-song-and-dance,
-#section-song-and-dance .mobile-header a.nav-officers,
-#section-song-and-dance .mobile-header a.nav-contact-us,
+#section-officers .mobile-header a.nav-officers,
+#section-contact-us .mobile-header a.nav-contact-us,
 #section-performance-team .mobile-header a.nav-performance-team {
-  color: #5b6236;
+  color: #500000;
 }
 
 #section-home .mobile-header a.nav-home:hover,
 #section-lessons .mobile-header a.nav-lessons:hover,
 #section-competitions .mobile-header a.nav-competitions:hover,
 #section-song-and-dance .mobile-header a.nav-song-and-dance:hover,
-#section-song-and-dance .mobile-header a.nav-officers:hover,
-#section-song-and-dance .mobile-header a.nav-contact-us:hover,
+#section-officers .mobile-header a.nav-officers:hover,
+#section-contact-us .mobile-header a.nav-contact-us:hover,
 #section-performance-team .mobile-header a.nav-performance-team:hover {
   color: #fce300;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-/* add a block of color around the navigational links, but not the website brand */
-#section-lessons a.nav-lessons,
-#section-competitions a.nav-competitions,
-#section-song-and-dance a.nav-song-and-dance,
-#section-performance-team a.nav-performance-team {
-  background-color: rgba(0, 60, 113, 0.4);
-}
-
-.sidebar {
-  display: none;
-}
-
-.main-content {
-  grid-area: main-content;
-  text-align: center;
-  max-height: 100%;
-  overflow-y: auto;
-  margin-left: 10px;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 10px;
-  color: black;
-}
-
-.blank {
-  display: none;
-}
-
-/* Main content styling */
-.main-content h1 {
-  padding-bottom: 10%;
-}
-
-.main-content p {
-  padding: 0 15% 0 15%;
-}
-
-.main-content div.officer img {
-  width: 200px;
+#section-lessons .mobile-header a.nav-lessons,
+#section-competitions .mobile-header a.nav-competitions,
+#section-song-and-dance .mobile-header a.nav-song-and-dance,
+#section-officers .mobile-header a.nav-officers,
+#section-contact-us .mobile-header a.nav-contact-us,
+#section-performance-team .mobile-header a.nav-performance-team {
+  background-color: white;
 }
 
 /* desktop view */
@@ -226,11 +222,6 @@ body {
     grid-template-columns: 20% 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "sidebar main-content";
-  }
-
-  .blank {
-    display: block;
-    grid-area: blank;
   }
 
   /* Sidebar content styling */
@@ -283,29 +274,34 @@ body {
     justify-content: space-around;
   }
 
-  #section-home .sidebar a.nav-home,
-  #section-lessons .sidebar a.nav-lessons,
   #section-competitions .sidebar a.nav-competitions,
-  #section-song-and-dance .sidebar a.nav-song-and-dance,
-  #section-performance-team .sidebar a.nav-performance-team {
-    color: #5b6236;
+  #section-contact-us .sidebar a.nav-contact-us,
+  #section-lessons .sidebar a.nav-lessons,
+  #section-officers .sidebar a.nav-officers,
+  #section-performance-team .sidebar a.nav-performance-team,
+  #section-song-and-dance .sidebar a.nav-song-and-dance {
+    color: #500000;
   }
 
+  #section-competitions .sidebar a.nav-competitions:hover,
+  #section-contact-us .sidebar a.nav-contact-us:hover,
   #section-home .sidebar a.nav-home:hover,
   #section-lessons .sidebar a.nav-lessons:hover,
-  #section-competitions .sidebar a.nav-competitions:hover,
-  #section-song-and-dance .sidebar a.nav-song-and-dance:hover,
-  #section-performance-team .sidebar a.nav-performance-team:hover {
+  #section-officers .sidebar a.nav-officers:hover,
+  #section-performance-team .sidebar a.nav-performance-team:hover,
+  #section-song-and-dance .sidebar a.nav-song-and-dance:hover {
     color: #fce300;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
 
   /* add a block of color around the navigational links, but not the website brand */
-  #section-lessons a.nav-lessons,
-  #section-competitions a.nav-competitions,
-  #section-song-and-dance a.nav-song-and-dance,
-  #section-performance-team a.nav-performance-team {
-    background-color: rgba(0, 60, 113, 0.4);
+  #section-competitions .sidebar a.nav-competitions,
+  #section-contact-us .sidebar a.nav-contact-us, 
+  #section-lessons .sidebar a.nav-lessons,
+  #section-officers .sidebar a.nav-officers,
+  #section-performance-team .sidebar a.nav-performance-team,
+  #section-song-and-dance .sidebar a.nav-song-and-dance {
+    background-color: white;
   }
 }
