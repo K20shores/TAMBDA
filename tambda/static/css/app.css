@@ -1,7 +1,9 @@
 /* hamburger courtesy of https://codepen.io/fourjuaneight/pen/xppPWw, thanks Juan! */
 
 body {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Oswald", sans-serif;
+  font-family: "Crimson Text", "Georgia", serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: black;
   background-image: url(../img/background1.jpg);
   background-repeat: no-repeat;
@@ -297,7 +299,7 @@ body {
 
   /* add a block of color around the navigational links, but not the website brand */
   #section-competitions .sidebar a.nav-competitions,
-  #section-contact-us .sidebar a.nav-contact-us, 
+  #section-contact-us .sidebar a.nav-contact-us,
   #section-lessons .sidebar a.nav-lessons,
   #section-officers .sidebar a.nav-officers,
   #section-performance-team .sidebar a.nav-performance-team,
