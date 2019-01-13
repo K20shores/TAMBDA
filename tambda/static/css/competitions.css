@@ -1,9 +1,8 @@
 .main-content {
   display: grid;
-  grid-template-rows: 10% 10% 1fr;
+  grid-template-rows: 10% 1fr;
   grid-template-areas:
     "title"
-    "navigation"
     "content";
 }
 
@@ -22,25 +21,9 @@
   grid-area: title;
 }
 
-.main-content .navigation {
-  grid-area: navigation;
-  display: flex;
-  justify-content: space-around;
-}
 
 .main-content .content {
   grid-area: content;
   text-align: left;
   justify-content: space-around;
-}
-
-.main-content .navigation a {
-  color:#003C71;
-  text-decoration: none;
-}
-
-.main-content .navigation a:hover {
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  color: #fce300;
 }

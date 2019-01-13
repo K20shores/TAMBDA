@@ -14,17 +14,6 @@
     {% endblock %}
 </div>
 
-<div class="navigation">
-    <a href="{% url 'competition_home' %}">Competition Home</a>
-    <a href="{% url 'competition_attire' %}">Attire</a>
-    <a href="{% url 'competition_packing_list' %}">Packing List</a>
-    <a href="{% url 'competition_pictures' %}">Pictures</a>
-    <a href="{% url 'competition_results' %}">Results</a>
-    <a href="{% url 'competition_syllabus' %}">Syllabus</a>
-    <a href="{% url 'competition_forms' %}">Forms</a>
-    <a href="{% url 'competition_links' %}">Links</a>
-</div>
-
 <div class="content">
     {% block competition_content %}
     {% endblock %}

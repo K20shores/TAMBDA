@@ -90,8 +90,8 @@ input[type="checkbox"] {
 
 .song-and-dance-grid-container label:hover {
   color: #500000;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   background-color: white;
 }
 
