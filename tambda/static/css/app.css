@@ -125,10 +125,13 @@ a.nav-competitions::after {
   content: "\25BC";
 }
 
-.navigation #submenu-toggle:checked + li.nav-competitions a.nav-competitions::after {
+.navigation #submenu-toggle:checked+li.nav-competitions a.nav-competitions::after {
   content: "\25B2";
 }
 
+.navigation #submenu-toggle:checked+li ul {
+  display: block;
+}
 
 /* Menu Styling for mobile nav*/
 @media only screen and (max-width: 991px) {
@@ -197,7 +200,8 @@ a.nav-competitions::after {
     transition: all 0.4s ease-in-out;
   }
 
-  .navigation #toggle, #submenu-toggle{
+  .navigation #toggle,
+  #submenu-toggle {
     display: none;
   }
 
@@ -257,12 +261,6 @@ a.nav-competitions::after {
     -webkit-transform: scale(1);
     transform: scale(1);
   }
-
-  li.nav-competitions:hover .submenu,
-  li.nav-competitions:active .submenu {
-    display: block;
-  }
-
 }
 
 /* desktop view */
@@ -358,9 +356,5 @@ a.nav-competitions::after {
   li.nav-competitions:hover+ul li.nav-competitions {
     background-color: transparent;
     color: white;
-  }
-
-  .navigation #submenu-toggle:checked + li ul {
-    display: block;
   }
 }
