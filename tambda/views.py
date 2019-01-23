@@ -9,6 +9,12 @@ def lessons(request):
 def performance_team(request):
     return render(request, 'tambda/performance_team.html', {})
 
+def consent(request):
+    return render(request, 'tambda/consent.html')
+
+def privacy(request):
+    return render(request, 'tambda/privacy.html')
+
 def competition_home(request):
     return render(request, 'tambda/competition_home.html', {})
 

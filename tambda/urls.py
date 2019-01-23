@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+import social_django as social_django
 
 urlpatterns = [
     path('', include('accounts.urls')),
@@ -32,6 +33,10 @@ urlpatterns = [
     path('performance_team/', views.performance_team, name='performance_team'),
     path('contact-us/', views.contact_us, name='contact_us'),
     path('officers/', views.officers, name='officers'),
+    path('privacy/', views.privacy, name='privacy'),
+    path('consent/', views.consent, name='consent'),
     path('', views.home, name='home'),
     path('admin/', admin.site.urls),
+    path('auth/', include('social_django.urls'), name='social'),
+#    url(r'^auth/', include('social_django.urls', namespace='social')),  # <- Here
 ]
