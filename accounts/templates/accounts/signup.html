@@ -8,6 +8,7 @@
       <div class="card">
         <div class="card-body">
           <h3 class="card-title">Sign up</h3>
+          <a href="{% url 'social:begin' 'google-oauth2' %}">Signup with Google</a><br>
           <form method="post" novalidate>
             {% csrf_token %}
             {% include 'includes/forms.html' %}
