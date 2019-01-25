@@ -69,6 +69,19 @@ body {
   list-style-type: none;
 }
 
+#section-home .shirt-order{
+  text-decoration: none;
+  color: white;
+  background-color: #500000;
+  padding: 5px 10px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#section-home .shirt-order:hover{
+  color: #fce300;
+}
+
 #section-lessons .navigation li.nav-lessons a,
 #section-competitions .navigation li.nav-competitions a,
 #section-song-and-dance .navigation li.nav-song-and-dance a,
@@ -76,6 +89,8 @@ body {
 #section-contact-us .navigation li.nav-contact-us a,
 #section-performance-team .navigation li.nav-performance-team a {
   color: #500000;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 #section-home .navigation li.nav-home a:hover,
@@ -86,8 +101,6 @@ body {
 #section-contact-us .navigation li.nav-contact-us a:hover,
 #section-performance-team .navigation li.nav-performance-team a:hover {
   color: #fce300;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
 }
 
 #section-lessons .navigation li.nav-lessons,
@@ -247,8 +260,6 @@ a.nav-competitions::after {
 
   .navigation nav a:hover {
     color: #fce300;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
   }
 
   .navigation nav a:first-child {
@@ -335,18 +346,21 @@ a.nav-competitions::after {
   .navigation .nav a {
     text-decoration: none;
     color: white;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   .navigation .nav a:hover {
     color: #fce300;
+  }
+
+  .navigation .nav li a{
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
   }
 
   .navigation .nav li a:hover {
     color: #fce300;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
   }
 
   li.nav-competitions:hover+ul li.nav-competitions {

@@ -86,12 +86,12 @@ input[type="checkbox"] {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .song-and-dance-grid-container label:hover {
   color: #500000;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
   background-color: white;
 }
 
