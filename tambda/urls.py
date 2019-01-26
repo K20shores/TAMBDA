@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 import social_django as social_django
+from django.http import HttpResponse
 
 urlpatterns = [
     path('', include('accounts.urls')),
@@ -38,5 +39,5 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('admin/', admin.site.urls),
     path('auth/', include('social_django.urls'), name='social'),
-#    url(r'^auth/', include('social_django.urls', namespace='social')),  # <- Here
+    path('robots.txt', lambda r: HttpResponse("User-agent: *\nDisallow: /competitions/", content_type="text/plain")),
 ]
